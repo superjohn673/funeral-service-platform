@@ -14,6 +14,8 @@ import SellerLayout from "./pages/seller/components/SellerLayout";
 import ProductListPage from "./pages/seller/products/ProductListPage";
 import CreateProductPage from "./pages/seller/products/CreateProductPage";
 import EditProductPage from "./pages/seller/products/EditProductPage";
+import MatchListPage from "./pages/seller/matches/MatchListPage";
+import MatchDetailPage from "./pages/seller/matches/MatchDetailPage";
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "";
 
@@ -58,6 +60,8 @@ const App: React.FC = () => {
               <Route path="products" element={<ProductListPage />} />
               <Route path="products/new" element={<CreateProductPage />} />
               <Route path="products/:id/edit" element={<EditProductPage />} />
+              <Route path="matches" element={<MatchListPage />} />
+              <Route path="matches/:id" element={<MatchDetailPage />} />
             </Route>
           </Routes>
         </Router>
