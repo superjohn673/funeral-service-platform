@@ -10,6 +10,10 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import HomePage from "./pages/home/HomePage";
 import ProductsPage from "./pages/products/ProductsPage";
 import ProductDetailPage from "./pages/products/detail/ProductDetailPage";
+import SellerLayout from "./pages/seller/components/SellerLayout";
+import ProductListPage from "./pages/seller/products/ProductListPage";
+import CreateProductPage from "./pages/seller/products/CreateProductPage";
+import EditProductPage from "./pages/seller/products/EditProductPage";
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "";
 
@@ -41,6 +45,19 @@ const App: React.FC = () => {
                   </ProtectedRoute>
                 }
               />
+            </Route>
+            {/* 賣家後台相關路由*/}
+            <Route
+              path="/seller"
+              element={
+                <ProtectedRoute roles={["seller"]}>
+                  <SellerLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route path="products" element={<ProductListPage />} />
+              <Route path="products/new" element={<CreateProductPage />} />
+              <Route path="products/:id/edit" element={<EditProductPage />} />
             </Route>
           </Routes>
         </Router>
