@@ -7,6 +7,7 @@ import MainLayout from "./components/layout/MainLayout";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import HomePage from "./pages/home/HomePage";
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "";
 
