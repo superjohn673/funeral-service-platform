@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "../../../hooks/useAuth";
+import { User } from "../../../types/user";
 
 const SellerLayout: React.FC = () => {
   const { user } = useAuth();
@@ -18,7 +19,7 @@ const SellerLayout: React.FC = () => {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow p-6">
             <div className="space-y-2">
-              {user?.company && (
+              {user && user.company && (
                 <div className="pb-4 border-b">
                   <h3 className="font-medium text-gray-900">
                     {user.company.name}

@@ -1,9 +1,9 @@
 import React from "react";
-import { ProductFilter } from "../types/product";
+import type { ProductFilter as ProductFilterType } from "../types/product";
 
 interface Props {
-  filter: ProductFilter;
-  onFilterChange: (filter: ProductFilter) => void;
+  filter: ProductFilterType;
+  onFilterChange: (filter: ProductFilterType) => void;
 }
 
 const ProductFilter: React.FC<Props> = ({ filter, onFilterChange }) => {
@@ -13,7 +13,7 @@ const ProductFilter: React.FC<Props> = ({ filter, onFilterChange }) => {
     { min: 0, max: 200000, label: "20萬以下" },
     { min: 200000, max: 500000, label: "20-50萬" },
     { min: 500000, max: 1000000, label: "50-100萬" },
-    { min: 1000000, max: null, label: "100萬以上" },
+    { min: 1000000, max: undefined, label: "100萬以上" },
   ];
 
   return (
@@ -96,7 +96,10 @@ const ProductFilter: React.FC<Props> = ({ filter, onFilterChange }) => {
                 onChange={() =>
                   onFilterChange({
                     ...filter,
-                    priceRange: { min: range.min, max: range.max },
+                    priceRange: {
+                      min: range.min,
+                      max: range.max !== undefined ? range.max : undefined,
+                    },
                   })
                 }
                 className="form-radio text-blue-600"

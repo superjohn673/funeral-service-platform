@@ -28,4 +28,19 @@ export const productService = {
     const response = await axios.get("/products/featured");
     return response.data;
   },
+  deleteProduct: async (id: string): Promise<void> => {
+    await axios.delete(`/products/${id}`);
+  },
+  createProduct: async (data: Partial<Product>): Promise<Product> => {
+    const response = await axios.post("/products", data);
+    return response.data;
+  },
+
+  updateProduct: async (
+    id: string,
+    data: Partial<Product>
+  ): Promise<Product> => {
+    const response = await axios.patch(`/products/${id}`, data);
+    return response.data;
+  },
 };
