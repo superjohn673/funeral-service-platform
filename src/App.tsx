@@ -9,6 +9,7 @@ import RegisterPage from "./pages/auth/RegisterPage";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import HomePage from "./pages/home/HomePage";
 import ProductsPage from "./pages/products/ProductsPage";
+import ProductDetailPage from "./pages/products/detail/ProductDetailPage";
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "";
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
               {/* 公開路由 */}
               <Route index element={<HomePage />} />
               <Route path="products" element={<ProductsPage />} />
+              <Route path="products/:id" element={<ProductDetailPage />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="guide" element={<GuidePage />} />
               <Route path="login" element={<LoginPage />} />
