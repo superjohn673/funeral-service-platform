@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/funeral-service-platform/static/css/main.d941a16d.css",
+    "main.js": "/funeral-service-platform/static/js/main.c8781cd8.js",
+    "index.html": "/funeral-service-platform/index.html",
+    "main.d941a16d.css.map": "/funeral-service-platform/static/css/main.d941a16d.css.map",
+    "main.c8781cd8.js.map": "/funeral-service-platform/static/js/main.c8781cd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d941a16d.css",
+    "static/js/main.c8781cd8.js"
+  ]
+}
