@@ -16,6 +16,9 @@ import CreateProductPage from "./pages/seller/products/CreateProductPage";
 import EditProductPage from "./pages/seller/products/EditProductPage";
 import MatchListPage from "./pages/seller/matches/MatchListPage";
 import MatchDetailPage from "./pages/seller/matches/MatchDetailPage";
+import ProfilePage from "./pages/profile/ProfilePage";
+import AboutPage from "./pages/about/AboutPage";
+import GuidePage from "./pages/guide/GuidePage";
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "";
 
@@ -63,6 +66,16 @@ const App: React.FC = () => {
               <Route path="matches" element={<MatchListPage />} />
               <Route path="matches/:id" element={<MatchDetailPage />} />
             </Route>
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfilePage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/guide" element={<GuidePage />} />
           </Routes>
         </Router>
       </GoogleOAuthProvider>
